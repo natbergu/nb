@@ -4,4 +4,5 @@ A point of clarification: in the place of sensible img or other asset links, you
 these are just links to the "assets" section of Glitch, in which all of my images are hosted.
 
 This single-page website was made using HTML5, CSS3, W3.CSS, and Vue.js.
+
 -n
