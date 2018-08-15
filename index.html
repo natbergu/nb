@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <title>Nathaniel's ePortfolio</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Fapple-touch-icon.png?1525888428033">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Ffavicon-32x32.png?1525888427823">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Ffavicon-16x16.png?1525888428160">
-    <link rel="manifest" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Fsite.webmanifest?1525888428542">
-    <link rel="mask-icon" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Fsafari-pinned-tab.svg?1525888428714" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--Adding Vue.js-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--Adding W3.CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> <!--Adding Font Awesome-->
+    <title>Nathaniel's ePortfolio</title> <!--The title which appears on its tab-->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Fapple-touch-icon.png?1525888428033"> <!--Icon for adding webpage to home screen on an apple device-->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Ffavicon-32x32.png?1525888427823"> <!--32x32 tab icon-->
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Ffavicon-16x16.png?1525888428160"> <!--16x16 tab icon-->
+    <link rel="manifest" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Fsite.webmanifest?1525888428542"> <!--Manifest icon for various Google uses-->
+    <link rel="mask-icon" href="https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2Fsafari-pinned-tab.svg?1525888428714" color="#5bbad5"> <!--Icon for Safari pinned tab-->
+    <meta name="msapplication-TileColor" content="#00b81a"> <!--Colour for win8/10 tiles-->
+    <meta name="theme-color" content="#00b81a"> <!--Tab colour for mobile chrome-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Mobile responsiveness (me make look good)-->
     <style type="text/css">
       @media only screen and (max-width: 1024px) {
         .hideIfMobile {
           display:none;
         }
       }
-    </style>
+    </style> <!--Menu text descriptions hide if screen too small-->
   </head>
-  <body style="background-image:url('https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2F97fc45a0-9d07-419e-930f-3a5e0804d191%252Flines-white-green-stripes-streaks-1920x1080-c3-ffffff-008000-228b22-l3-105-105-105-a-300-f-1.png?1528482994374');">
-    <div id="vue-app">
-      <div class="w3-top" style="margin-bottom:50px;">
+  <body style="background-image:url('https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2F97fc45a0-9d07-419e-930f-3a5e0804d191%252Flines-white-green-stripes-streaks-1920x1080-c3-ffffff-008000-228b22-l3-105-105-105-a-300-f-1.png?1528482994374');"> <!--Website bg image-->
+    <div id="vue-app"> <!--Start of Vue app contents-->
+      <div class="w3-top" style="margin-bottom:50px;"> 
         <div class="w3-bar w3-lightgrey w3-border" style="background-color:white;">
           <div v-if="pageToShow==='home'" v-on:click="showPage('home')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div>
           <div v-else v-on:click="showPage('home')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div>
@@ -61,7 +61,7 @@
         <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><b>3</b></div>
         <div class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-right" style="color:gray;"></i></div>
       </div>
-    </div>
+    </div> <!--End of Vue app contents-->
 
     <div style="display:none" id="home-page">
       <div>
