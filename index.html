@@ -23,38 +23,38 @@
   </head>
   <body style="background-image:url('https://cdn.glitch.com/97fc45a0-9d07-419e-930f-3a5e0804d191%2F97fc45a0-9d07-419e-930f-3a5e0804d191%252Flines-white-green-stripes-streaks-1920x1080-c3-ffffff-008000-228b22-l3-105-105-105-a-300-f-1.png?1528482994374');"> <!--Website bg image-->
     <div id="vue-app"> <!--Start of Vue app contents-->
-      <div class="w3-top" style="margin-bottom:50px;"> 
-        <div class="w3-bar w3-lightgrey w3-border" style="background-color:white;">
-          <div v-if="pageToShow==='home'" v-on:click="showPage('home')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div>
-          <div v-else v-on:click="showPage('home')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div>
-          <div v-if="pageToShow==='portfolio1'||pageToShow==='portfolio2'||pageToShow==='portfolio3'" v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div>
-          <div v-else v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div>
-          <div v-if="pageToShow==='contact'" v-on:click="showPage('contact')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div>
-          <div v-else v-on:click="showPage('contact')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div>
-          <a href="ow.html" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></a>
-          <a href="https://github.com/natbergu/nb/tree/glitch" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fab fa-github"></i><span class="hideIfMobile"> Github Repository</span></a>
+      <div class="w3-top" style="margin-bottom:50px;"> <!--Start of navbar-->
+        <div class="w3-bar w3-lightgrey w3-border" style="background-color:white;"> <!--Defining navbar in W3.CSS-->
+          <div v-if="pageToShow==='home'" v-on:click="showPage('home')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Active home tab-->
+          <div v-else v-on:click="showPage('home')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Inactive home tab-->
+          <div v-if="pageToShow==='portfolio1'||pageToShow==='portfolio2'||pageToShow==='portfolio3'" v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Active projects tab-->
+          <div v-else v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Inactive projects tab-->
+          <div v-if="pageToShow==='contact'" v-on:click="showPage('contact')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Active contact tab-->
+          <div v-else v-on:click="showPage('contact')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Inactive contact tab-->
+          <a href="ow.html" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></a> <!--Work in progress -- no other websites that are active, soon to be though-->
+          <a href="https://github.com/natbergu/nb/tree/glitch" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fab fa-github"></i><span class="hideIfMobile"> Github Repository</span></a> <!--Link to Github Repository for project-->
         </div>
-      </div>
-      <component v-bind:is=" 'home' " v-if="pageToShow==='home'"></component>
-      <component v-bind:is=" 'contact' " v-if="pageToShow==='contact'"></component>
-      <component v-bind:is=" 'portfolio1' " v-if="pageToShow==='portfolio1'"></component>
-      <component v-bind:is=" 'portfolio2' " v-if="pageToShow==='portfolio2'"></component>
-      <component v-bind:is=" 'portfolio3' " v-if="pageToShow==='portfolio3'"></component>
-      <div v-if="pageToShow==='portfolio1'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;">
+      </div> <!--End of navbar-->
+      <component v-bind:is=" 'home' " v-if="pageToShow==='home'"></component> <!--Where the home page will appear-->
+      <component v-bind:is=" 'contact' " v-if="pageToShow==='contact'"></component> <!--Where the contact page will appear-->
+      <component v-bind:is=" 'portfolio1' " v-if="pageToShow==='portfolio1'"></component> <!--Where portfolio page 1 will appear-->
+      <component v-bind:is=" 'portfolio2' " v-if="pageToShow==='portfolio2'"></component> <!--Where portfolio page 2 will appear-->
+      <component v-bind:is=" 'portfolio3' " v-if="pageToShow==='portfolio3'"></component> <!--Where portfolio page 3 will appear-->
+      <div v-if="pageToShow==='portfolio1'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;"> <!--Page selector if portfolio 1-->
         <div class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-left" style="color:gray;"></i></div>
         <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><b>1</b></div>
         <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><b>2</b></div>
         <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><b>3</b></div>
         <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-right"></i></div>
       </div>
-      <div v-if="pageToShow==='portfolio2'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;">
+      <div v-if="pageToShow==='portfolio2'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;"> <!--Page selector if portfolio 2-->
         <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-left"></i></div>
         <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><b>1</b></div>
         <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><b>2</b></div>
         <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><b>3</b></div>
         <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-right"></i></div>
       </div>
-      <div v-if="pageToShow==='portfolio3'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;">
+      <div v-if="pageToShow==='portfolio3'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;"> <!--Page selector if portfolio 3-->
         <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-left"></i></div>
         <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><b>1</b></div>
         <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><b>2</b></div>
@@ -63,7 +63,7 @@
       </div>
     </div> <!--End of Vue app contents-->
 
-    <div style="display:none" id="home-page">
+    <div style="display:none" id="home-page"> <!--Start of code for home page-->
       <div>
         <div class="w3-panel w3-green" style="margin:75px 50px;">
           <h3>
@@ -73,7 +73,8 @@
             This is the place where most past, present and future projects by said person will be hosted. 
             This website is still under development and probably will stay under development for a long time.
           </h4>
-        </div><div class="w3-panel w3-green" style="margin:75px 50px;">
+        </div>
+        <div class="w3-panel w3-green" style="margin:75px 50px;">
           <h3>
             Nathaniel Berger
           </h3>
@@ -82,9 +83,9 @@
           </h4>
         </div>
       </div>
-    </div>
+    </div> <!--End of code for home page-->
     
-    <div style="display:none" id="portfolio-page-1">
+    <div style="display:none" id="portfolio-page-1"> <!--Start of code for portfolio 1-->
       <div>
         <div onclick="location.href='https://drive.google.com/open?id=1JPgJb-z7jVN2lB1QUpgXmL3yIZr8zA24'" class="w3-bar w3-green w3-xxlarge" style="margin:auto;margin-top:75px;width:75%;text-align:center;padding:5%;cursor:pointer;">
           <p>
@@ -97,21 +98,21 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> <!--End of code for portfolio 1-->
     
-    <div style="display:none" id="portfolio-page-2">
+    <div style="display:none" id="portfolio-page-2"> <!--Start of code for portfolio 2-->
       <div>
         
       </div>
-    </div>
+    </div> <!--End of code for portfolio 2-->
     
-    <div style="display:none" id="portfolio-page-3">
+    <div style="display:none" id="portfolio-page-3"> <!--Start of code for portfolio 3-->
       <div>
         
       </div>
-    </div>
+    </div> <!--End of code for portfolio 3-->
     
-    <div style="display:none" id="contact-page">
+    <div style="display:none" id="contact-page"> <!--Start of code for contact page-->
       <div>
         <div class="w3-panel w3-green" style="margin:75px 50px;">
           <h3>
@@ -131,10 +132,10 @@
           </h4>
         </div>
       </div>
-    </div>
+    </div> <!--End of code for contact page-->
 
   </body>
-      <script type="text/javascript">
+      <script type="text/javascript"> //script for Vue app
       new Vue({
           el: '#vue-app',
           components: {
@@ -146,21 +147,20 @@
             },
             data: data,
             methods: methods(),
-      })
+      }) //Declaring the app, its components, the data, and the methods
       function data(){
           return {
-              someData: true,
               pageToShow: 'home'
           };
-      }
+      } //What variables will be used
       function methods(){
         return {
           showPage
-        }
+        } //What functions will be used
         function showPage(page){
           var vm = this;
           vm.pageToShow = page;
-        }
+        } //Declaring the showPage function and what it will do
       }
     </script>
 </html>
