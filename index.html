@@ -15,9 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--Mobile responsiveness (me make look good)-->
     <meta charset="utf-8"> <!--Character set-->
     <style type="text/css">
-      a {
-        text-decoration: none;
-      }
       @media only screen and (max-width: 1023px) {
         .hideIfMobile {
           display:none;
@@ -41,8 +38,9 @@
           <div v-else v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Inactive projects tab-->
           <div v-if="pageToShow==='contact'" v-on:click="showPage('contact')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Active contact tab-->
           <div v-else v-on:click="showPage('contact')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Inactive contact tab-->
-          <a href="ow.html" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></a> <!--Work in progress -- no other websites that are active, soon to be though-->
-          <a href="https://github.com/natbergu/nb/tree/glitch" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fab fa-github"></i><span class="hideIfMobile"> Github Repository</span></a> <!--Link to Github Repository for project-->
+          <div v-if="pageToShow==='other'" v-on:click="showPage('other')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Work in progress -- no other websites that are active, soon to be though-->
+          <div v-else v-on:click="showPage('other')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Work in progress -- no other websites that are active, soon to be though-->
+          <a href="https://github.com/natbergu/nb/tree/glitch" target="_blank" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fab fa-github"></i><span class="hideIfMobile"> Github Repository</span></a> <!--Link to Github Repository for project-->
         </div>
       </div> <!--End of navbar-->
       
@@ -72,9 +70,9 @@
               About this website
             </h3>
             <h4>
-              This website is a <a href="https://en.wikipedia.org/wiki/Single-page_application">single-page application</a>, made using <a href="https://en.wikipedia.org/wiki/HTML5"><i class="fab fa-html5"></i> HTML 5</a>, 
-              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3"><i class="fab fa-css3-alt"></i> CSS3</a>, <a href="https://www.javascript.com/"><i class="fab fa-js-square"></i> JavaScript</a>, <a href="https://www.w3schools.com/w3css/">W3.CSS</a>, 
-              and <a href="https://vuejs.org/"><i class="fab fa-vuejs"></i> Vue.js</a>, with <a href="https://fontawesome.com/"><i class="fab fa-font-awesome"></i> Font Awesome</a> for icons. If you click the link at the top of the page titled "Github Repository" 
+              This website is a <a href="https://en.wikipedia.org/wiki/Single-page_application"  target="_blank">single-page application</a>, made using <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><i class="fab fa-html5"></i> HTML 5</a>, 
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><i class="fab fa-css3-alt"></i> CSS3</a>, <a href="https://www.javascript.com/" target="_blank"><i class="fab fa-js-square"></i> JavaScript</a>, <a href="https://www.w3schools.com/w3css/" target="_blank">W3.CSS</a>, 
+              and <a href="https://vuejs.org/" target="_blank"><i class="fab fa-vuejs"></i> Vue.js</a>, with <a href="https://fontawesome.com/" target="_blank"><i class="fab fa-font-awesome"></i> Font Awesome</a> for icons. If you click the link at the top of the page titled "Github Repository" 
               you will have access to its source code (or you could right click and choose View Source / View page source). I went through and commented it just for you!
             </h4>
           </div>
@@ -129,6 +127,20 @@
           </div>
         </div>
       </div> <!--End of code for contact page-->
+	  
+	  <div v-if="pageToShow==='other'"> <!--Start of code for other websites page-->
+		<div>
+		  <div class="w3-panel w3-green" style="margin:75px 50px;">
+			<h3>
+			  Profiles
+			</h3>
+			<h4 class="smallerFont">
+			  &gt; <a href="https://github.com/natbergu" target="_blank">GitHub</a> <br>
+			  &gt; <a href="https://npmjs.org/~natbergu" target="_blank">NPM</a>
+			</h4>
+		  </div>
+		</div>
+	  </div> <!--End of code for other websites page-->
       <div v-if="pageToShow==='portfolio1'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;"> <!--Page selector if portfolio 1-->
         <div class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-left" style="color:gray;"></i></div>
         <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><b>1</b></div>
