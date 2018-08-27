@@ -15,24 +15,12 @@
 	<meta name="google-site-verification" content="w_BUfTE1WVNmE08VgAo2dcfe0QG3_QV_S_pEbLxTQPU"> <!--Google Search Console Verify-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--Mobile responsiveness (me make look good)-->
     <meta charset="utf-8"> <!--Character set-->
-    <style type="text/css">
-      @media only screen and (max-width: 1023px) {
-        .hideIfMobile {
-          display:none;
-        }
-        .smallerFont{
-          font-size:1rem;
-        }
-      }
-      .overrideBoxSizing {
-        box-sizing: content-box;
-      }
-    </style> <!--Menu text descriptions hide if screen too small-->
+    <link rel="stylesheet" href="./css/style.css"> <!--Linking the stylesheet-->
   </head>
-  <body style="background-image:url('./img/bg.png');"> <!--Website bg image-->
+  <body> <!--Website bg image-->
     <div id="vue-app"> <!--Start of Vue app contents-->
       <nav class="w3-top" style="margin-bottom:50px;"> <!--Start of navbar-->
-        <div class="w3-bar w3-lightgrey w3-border" style="background-color:white;"> <!--Defining navbar in W3.CSS-->
+        <div class="w3-bar w3-lightgrey w3-border navBar"> <!--Defining navbar in W3.CSS-->
           <div v-if="pageToShow==='home'" v-on:click="showPage('home')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Active home tab-->
           <div v-else v-on:click="showPage('home')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Inactive home tab-->
           <div v-if="pageToShow==='portfolio1'||pageToShow==='portfolio2'||pageToShow==='portfolio3'" v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Active projects tab-->
@@ -47,7 +35,7 @@
       
       <main v-if="pageToShow==='home'"> <!--Start of code for home page-->
         <div>
-          <div class="w3-panel w3-green" style="margin:75px 50px;">
+          <div class="w3-panel w3-green panelMargin">
             <h3>
               Welcome to Nathaniel Berger's ePortfolio!
             </h3>
@@ -56,7 +44,7 @@
               This website is still under development and probably will stay under development for a long time.
             </h4>
           </div>
-          <div class="w3-panel w3-green" style="margin:75px 50px;">
+          <div class="w3-panel w3-green panelMargin">
             <h3>
               Nathaniel Berger
             </h3>
@@ -66,7 +54,7 @@
               English and is currently learning French, with plans to learn other languages down the road. 
             </h4>
           </div>
-          <div class="w3-panel w3-green" style="margin:75px 50px;">
+          <div class="w3-panel w3-green panelMargin">
             <h3>
               About this website
             </h3>
@@ -82,12 +70,12 @@
 
       <main v-if="pageToShow==='portfolio1'"> <!--Start of code for portfolio 1-->
         <div>
-          <div onclick="location.href='https://drive.google.com/open?id=1JPgJb-z7jVN2lB1QUpgXmL3yIZr8zA24'" class="w3-bar w3-green w3-xxlarge" style="margin:auto;margin-top:75px;width:75%;text-align:center;padding:5%;cursor:pointer;">
+          <div onclick="location.href='https://drive.google.com/open?id=1JPgJb-z7jVN2lB1QUpgXmL3yIZr8zA24'" class="w3-bar w3-green w3-xxlarge gameLink">
             <p>
               <i class="fa fa-gamepad"></i> The Legend of Björn
             </p>
           </div>
-          <div onclick="location.href='https://drive.google.com/open?id=1lBtZvaPgROW7IjnpQB8YFURh8JFehFfd'" class="w3-bar w3-green w3-xxlarge" style="margin:auto;margin-top:75px;width:75%;text-align:center;padding:5%;cursor:pointer;">
+          <div onclick="location.href='https://drive.google.com/open?id=1lBtZvaPgROW7IjnpQB8YFURh8JFehFfd'" class="w3-bar w3-green w3-xxlarge gameLink">
             <p>
               <i class="fa fa-gamepad"></i> Qube
             </p>
@@ -109,7 +97,7 @@
 
       <main v-if="pageToShow==='contact'"> <!--Start of code for contact page-->
         <div>
-          <div class="w3-panel w3-green" style="margin:75px 50px;">
+          <div class="w3-panel w3-green panelMargin">
             <h3>
               eMail
             </h3>
@@ -118,7 +106,7 @@
               past: nathaniel.cwb@outlook.com (no longer checking)
             </h4>
           </div>
-          <div class="w3-panel w3-green" style="margin:75px 50px;">
+          <div class="w3-panel w3-green panelMargin">
             <h3>
               Cell
             </h3>
@@ -131,7 +119,7 @@
 	  
 	  <main v-if="pageToShow==='other'"> <!--Start of code for other websites page-->
 		<div>
-		  <div class="w3-panel w3-green" style="margin:75px 50px;">
+		  <div class="w3-panel w3-green panelMargin">
 			<h3>
 			  Profiles
 			</h3>
@@ -143,51 +131,51 @@
 		  </div>
 		</div>
 	  </main> <!--End of code for other websites page-->
-      <div v-if="pageToShow==='portfolio1'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;"> <!--Page selector if portfolio 1-->
-        <div class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-left" style="color:gray;"></i></div>
-        <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><b>1</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><b>2</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><b>3</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-right"></i></div>
+      <div v-if="pageToShow==='portfolio1'" class="w3-bar pageSelector"> <!--Page selector if portfolio 1-->
+        <div class="w3-button pageSelButton"><i class="fa fa-angle-double-left" style="color:gray;"></i></div>
+        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
+        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
+        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
+        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><i class="fa fa-angle-double-right"></i></div>
       </div>
-      <div v-if="pageToShow==='portfolio2'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;"> <!--Page selector if portfolio 2-->
-        <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-left"></i></div>
-        <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><b>1</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><b>2</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><b>3</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-right"></i></div>
+      <div v-if="pageToShow==='portfolio2'" class="w3-bar pageSelector"> <!--Page selector if portfolio 2-->
+        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><i class="fa fa-angle-double-left"></i></div>
+        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
+        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
+        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
+        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><i class="fa fa-angle-double-right"></i></div>
       </div>
-      <div v-if="pageToShow==='portfolio3'" class="w3-bar" style="margin-top:50px; margin-bottom:50px; text-align:center;"> <!--Page selector if portfolio 3-->
-        <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-left"></i></div>
-        <div v-on:click="showPage('portfolio1')" class="w3-button" style="background-color:white; border:solid;"><b>1</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button" style="background-color:white; border:solid;"><b>2</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button" style="background-color:white; border:solid;"><b>3</b></div>
-        <div class="w3-button" style="background-color:white; border:solid;"><i class="fa fa-angle-double-right" style="color:gray;"></i></div>
+      <div v-if="pageToShow==='portfolio3'" class="w3-bar pageSelector"> <!--Page selector if portfolio 3-->
+        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><i class="fa fa-angle-double-left"></i></div>
+        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
+        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
+        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
+        <div class="w3-button pageSelButton"><i class="fa fa-angle-double-right" style="color:gray;"></i></div>
       </div>
     </div> <!--End of Vue app contents-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!--jQuery for bs-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> <!--popper.js for bs-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> <!--bs.js for bs-->
-  </body>
-      <script type="text/javascript"> //script for Vue app
-      new Vue({
-          el: '#vue-app',
-            data: data,
-            methods: methods(),
-      }) //Declaring the app, its components, the data, and the methods
-      function data(){
-          return {
-              pageToShow: 'home'
-          };
-      } //What variables will be used
-      function methods(){
-        return {
-          showPage
-        } //What functions will be used
-        function showPage(page){
-          var vm = this;
-          vm.pageToShow = page;
-        } //Declaring the showPage function and what it will do
-      }
+    <script type="text/javascript"> //script for Vue app
+	  new Vue({
+		  el: '#vue-app',
+			data: data,
+			methods: methods(),
+	  }) //Declaring the app, its components, the data, and the methods
+	  function data(){
+		  return {
+			  pageToShow: 'home'
+		  };
+	  } //What variables will be used
+	  function methods(){
+		return {
+		  showPage
+		} //What functions will be used
+		function showPage(page){
+		  var vm = this;
+		  vm.pageToShow = page;
+		} //Declaring the showPage function and what it will do
+	  }
     </script>
+  </body>
 </html>
