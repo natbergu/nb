@@ -13,7 +13,6 @@ function methods(){
 		showPage
 	}
 	function showPage(page){ //Declaring the showPage function and what it will do
-		var vm = this;
-		vm.pageToShow = page;
+		this.pageToShow = page;
 	}
 }
