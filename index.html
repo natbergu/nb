@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <meta charset="utf-8"> <!--Character set-->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script> <!--Adding Vue.js version 2.5.17-->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--Adding W3.CSS-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> <!--Adding Font Awesome-->
@@ -13,7 +14,6 @@
   <meta name="theme-color" content="#00b81a"> <!--Tab colour for mobile chrome-->
   <meta name="google-site-verification" content="w_BUfTE1WVNmE08VgAo2dcfe0QG3_QV_S_pEbLxTQPU"> <!--Google Search Console Verify-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--Mobile responsiveness (me make look good)-->
-  <meta charset="utf-8"> <!--Character set-->
   <link rel="stylesheet" href="./css/style.css"> <!--Linking my stylesheet-->
     <div id="vue-app"> <!--Start of Vue app contents-->
       <nav class="w3-top" style="margin-bottom:50px;"> <!--Start of navbar-->
@@ -24,13 +24,13 @@
           <div v-else v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Inactive projects tab-->
           <div v-if="pageToShow==='contact'" v-on:click="showPage('contact')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Active contact tab-->
           <div v-else v-on:click="showPage('contact')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Inactive contact tab-->
-          <div v-if="pageToShow==='other'" v-on:click="showPage('other')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Work in progress -- no other websites that are active, soon to be though-->
-          <div v-else v-on:click="showPage('other')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Work in progress -- no other websites that are active, soon to be though-->
+          <div v-if="pageToShow==='other'" v-on:click="showPage('other')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Active Other Websites tab-->
+          <div v-else v-on:click="showPage('other')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Active Other Websites tab-->
           <a href="https://github.com/natbergu/nb" target="_blank" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fab fa-github"></i><span class="hideIfMobile"> Github Repository</span></a> <!--Link to Github Repository for project-->
         </div>
       </nav> <!--End of navbar-->
       
-      <main v-if="pageToShow==='home'"> <!--Start of code for home page-->
+      <div v-if="pageToShow==='home'"> <!--Start of code for home page-->
         <div>
           <div class="w3-panel w3-green panelMargin">
             <h3>
@@ -63,9 +63,22 @@
             </h4>
           </div>
         </div>
-      </main> <!--End of code for home page-->
+      </div> <!--End of code for home page-->
 
-      <main v-if="pageToShow==='portfolio1'"> <!--Start of code for portfolio 1-->
+      <div v-if="pageToShow==='portfolio1'"> <!--Start of code for portfolio 1-->
+        <div>
+          <div class="w3-panel w3-green panelMargin">
+		    <h3>
+			  <a href="https://github.com/natbergu/nb" target="_blank">This Website's Source Code</a>
+			</h3>
+			<h4>
+			  I decided that it would be a good idea to include it here as well as in the top right.
+			</h4>
+		  </div>
+        </div>
+      </div> <!--End of code for portfolio 1-->
+
+      <div v-if="pageToShow==='portfolio2'"> <!--Start of code for portfolio 2-->
         <div>
           <div onclick="location.href='https://drive.google.com/open?id=1JPgJb-z7jVN2lB1QUpgXmL3yIZr8zA24'" class="w3-bar w3-green w3-xxlarge gameLink">
             <p>
@@ -78,21 +91,15 @@
             </p>
           </div>
         </div>
-      </main> <!--End of code for portfolio 1-->
+      </div> <!--End of code for portfolio 2-->
 
-      <main v-if="pageToShow==='portfolio2'"> <!--Start of code for portfolio 2-->
+      <div v-if="pageToShow==='portfolio3'"> <!--Start of code for portfolio 3-->
         <div>
 
         </div>
-      </main> <!--End of code for portfolio 2-->
+      </div> <!--End of code for portfolio 3-->
 
-      <main v-if="pageToShow==='portfolio3'"> <!--Start of code for portfolio 3-->
-        <div>
-
-        </div>
-      </main> <!--End of code for portfolio 3-->
-
-      <main v-if="pageToShow==='contact'"> <!--Start of code for contact page-->
+      <div v-if="pageToShow==='contact'"> <!--Start of code for contact page-->
         <div>
           <div class="w3-panel w3-green panelMargin">
             <h3>
@@ -112,9 +119,9 @@
             </h4>
           </div>
         </div>
-      </main> <!--End of code for contact page-->
+      </div> <!--End of code for contact page-->
 	  
-	  <main v-if="pageToShow==='other'"> <!--Start of code for other websites page-->
+	  <div v-if="pageToShow==='other'"> <!--Start of code for other websites page-->
 		<div>
 		  <div class="w3-panel w3-green panelMargin">
 			<h3>
@@ -127,7 +134,7 @@
 			</h4>
 		  </div>
 		</div>
-	  </main> <!--End of code for other websites page-->
+	  </div> <!--End of code for other websites page-->
       <div v-if="pageToShow==='portfolio1'" class="w3-bar pageSelector"> <!--Page selector if portfolio 1-->
         <div class="w3-button pageSelButton"><i class="fa fa-angle-double-left" style="color:gray;"></i></div>
         <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
