@@ -18,14 +18,14 @@
     <div id="vue-app"> <!--Start of Vue app contents-->
       <nav class="w3-top" style="margin-bottom:50px;"> <!--Start of navbar-->
         <div class="w3-bar w3-lightgrey w3-border navBar"> <!--Defining navbar in W3.CSS - note that the navBar id is mine-->
-          <div v-if="pageToShow==='home'" v-on:click="showPage('home')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Active home tab - Note that for this and the rest of the nav items I kept an inline style element; this is because if I give them all a single class they treat the hidden items as part of their spacing concerns and reduce their width to 1/10th instead of 1/5th-->
-          <div v-else v-on:click="showPage('home')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Inactive home tab-->
-          <div v-if="pageToShow==='portfolio1'||pageToShow==='portfolio2'||pageToShow==='portfolio3'" v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Active projects tab-->
-          <div v-else v-on:click="showPage('portfolio1')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Inactive projects tab-->
-          <div v-if="pageToShow==='contact'" v-on:click="showPage('contact')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Active contact tab-->
-          <div v-else v-on:click="showPage('contact')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Inactive contact tab-->
-          <div v-if="pageToShow==='other'" v-on:click="showPage('other')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Active Other Websites tab-->
-          <div v-else v-on:click="showPage('other')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Active Other Websites tab-->
+          <div v-if="pageToShow==='home'" @click="showPage('home')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Active home tab - Note that for this and the rest of the nav items I kept an inline style element; this is because if I give them all a single class they treat the hidden items as part of their spacing concerns and reduce their width to 1/10th instead of 1/5th-->
+          <div v-else @click="showPage('home')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Inactive home tab-->
+          <div v-if="pageToShow==='portfolio1'||pageToShow==='portfolio2'||pageToShow==='portfolio3'" @click="showPage('portfolio1')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Active projects tab-->
+          <div v-else @click="showPage('portfolio1')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-folder"></i><span class="hideIfMobile"> Projects</span></div> <!--Inactive projects tab-->
+          <div v-if="pageToShow==='contact'" @click="showPage('contact')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Active contact tab-->
+          <div v-else @click="showPage('contact')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-envelope"></i><span class="hideIfMobile"> Contact</span></div> <!--Inactive contact tab-->
+          <div v-if="pageToShow==='other'" @click="showPage('other')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Active Other Websites tab-->
+          <div v-else @click="showPage('other')" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fa fa-globe"></i><span class="hideIfMobile"> Other Websites</span></div> <!--Active Other Websites tab-->
           <a href="https://github.com/natbergu/nb" target="_blank" class="w3-bar-item w3-button" style="width:20%;cursor:pointer"><i class="fab fa-github"></i><span class="hideIfMobile"> Github Repository</span></a> <!--Link to Github Repository for project-->
         </div>
       </nav> <!--End of navbar-->
@@ -148,23 +148,23 @@
 	  </div> <!--End of code for other websites page-->
       <div v-if="pageToShow==='portfolio1'" class="w3-bar pageSelector"> <!--Page selector if portfolio 1-->
         <div class="w3-button pageSelButton"><i class="fa fa-angle-double-left" style="color:gray;"></i></div>
-        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><i class="fa fa-angle-double-right"></i></div>
+        <div @click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
+        <div @click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
+        <div @click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
+        <div @click="showPage('portfolio2')" class="w3-button pageSelButton"><i class="fa fa-angle-double-right"></i></div>
       </div>
       <div v-if="pageToShow==='portfolio2'" class="w3-bar pageSelector"> <!--Page selector if portfolio 2-->
-        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><i class="fa fa-angle-double-left"></i></div>
-        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><i class="fa fa-angle-double-right"></i></div>
+        <div @click="showPage('portfolio1')" class="w3-button pageSelButton"><i class="fa fa-angle-double-left"></i></div>
+        <div @click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
+        <div @click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
+        <div @click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
+        <div @click="showPage('portfolio3')" class="w3-button pageSelButton"><i class="fa fa-angle-double-right"></i></div>
       </div>
       <div v-if="pageToShow==='portfolio3'" class="w3-bar pageSelector"> <!--Page selector if portfolio 3-->
-        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><i class="fa fa-angle-double-left"></i></div>
-        <div v-on:click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
-        <div v-on:click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
-        <div v-on:click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
+        <div @click="showPage('portfolio2')" class="w3-button pageSelButton"><i class="fa fa-angle-double-left"></i></div>
+        <div @click="showPage('portfolio1')" class="w3-button pageSelButton"><b>1</b></div>
+        <div @click="showPage('portfolio2')" class="w3-button pageSelButton"><b>2</b></div>
+        <div @click="showPage('portfolio3')" class="w3-button pageSelButton"><b>3</b></div>
         <div class="w3-button pageSelButton"><i class="fa fa-angle-double-right" style="color:gray;"></i></div>
       </div>
     </div> <!--End of Vue app contents-->
