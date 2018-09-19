@@ -14,7 +14,7 @@
   <meta name="google-site-verification" content="w_BUfTE1WVNmE08VgAo2dcfe0QG3_QV_S_pEbLxTQPU"> <!--Google Search Console Verify-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--Mobile responsiveness (me make look good)-->
   <link rel="stylesheet" href="css/style.css"> <!--Linking my stylesheet-->
-    <div id="vue-app"> <!--Start of Vue app contents-->
+  <div id="vue-app"> <!--Start of Vue app contents-->
       <nav class="w3-top" style="margin-bottom:50px;"> <!--Start of navbar-->
         <div class="w3-bar w3-lightgrey w3-border navBar"> <!--Defining navbar in W3.CSS - note that the navBar id is mine-->
           <div v-if="pageToShow==='home'" @click="showPage('home')" class="w3-bar-item w3-button w3-green w3-hover-green" style="width:20%;cursor:pointer"><i class="fa fa-home"></i><span class="hideIfMobile"> Home</span></div> <!--Active home tab - Note that for this and the rest of the nav items I kept an inline style element; this is because if I give them all a single class they treat the hidden items as part of their spacing concerns and reduce their width to 1/10th instead of 1/5th-->
